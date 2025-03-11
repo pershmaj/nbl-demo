@@ -1,0 +1,57 @@
+{
+  "workflowApiVersion": "1.1",
+  "metaData": {
+    "icon": "./img/Enrichment_CA_logo.png",
+    "iconSmall": "./img/Enrichment_CA_logo.png",
+    "category": "message"
+  },
+  "type": "REST",
+  "arguments": {
+    "execute": {
+      "inArguments": [],
+      "url": "https://$DOMAIN/journey/execute",
+      "verb": "POST",
+      "body": "",
+      "header": "",
+      "format": "json",
+      "useJwt": true,
+      "timeout": 100000,
+      "retryCount": 5,
+      "retryDelay": 10000
+    }
+  },
+  "configurationArguments": {
+    "save": {
+      "url": "https://$DOMAIN/journey/save",
+      "verb": "POST",
+      "useJwt": true
+    },
+    "publish": {
+      "url": "https://$DOMAIN/journey/publish",
+      "verb": "POST",
+      "useJwt": true
+    },
+    "stop": {
+      "url": "https://$DOMAIN/journey/stop",
+      "verb": "POST",
+      "useJwt": true
+    },
+    "validate": {
+      "url": "https://$DOMAIN/journey/validate",
+      "verb": "POST",
+      "useJwt": true
+    }
+  },
+  "userInterfaces": {
+    "configInspector": {
+      "size": "scm-sm",
+      "hideHeader": true,
+      "fullscreen": false
+    }
+  },
+  "outcomes": [],
+  "copySettings": {
+    "allowCopy": true,
+    "displayCopyNotification": true
+  }
+}

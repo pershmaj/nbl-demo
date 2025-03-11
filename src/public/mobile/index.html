@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Internet and mobile banking messaging</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="./css/styles.css">
+</head>
+
+<body>
+  <div id="app" class="container mt-4">
+    <div class="header text-center py-2 mb-1 logo" @click="step = 1" style="border: 2px solid black;">
+      <img src="./img/NLB_logo.png" alt="NLB Logo" class="logo" style="max-height: 50px;" >
+    </div>
+    <div class="header text-center my-3" v-show="step == 1">
+      <h4>INTERNET AND MOBILE BANKING<BR>MESSAING</h4>
+    </div>
+    <div id="step1" v-show="step == 1">
+      <div class="d-flex flex-row justify-content-between">
+        <div class="col-3 ma-1 d-flex flex-column logo box"  @click="step = 2">
+          <div class="col mt-2 d-flex align-items-center justify-content-around">BANNER</div>
+          <div class="col my-2 mb-3">
+            <img height="65" src="./img/banner.png" alt="">
+          </div>
+        </div>
+        <div class="col-3 ma-1 d-flex flex-column logo box">
+          <div class="col mt-2 px-1">PUSH<br>NOTIFICATION</div>
+          <div class="col my-2 mb-3">
+            <img height="65" src="./img/push_notification.png" alt="">
+          </div>
+        </div>
+        <div class="col-3 ma-1 d-flex flex-column logo box">
+          <div class="col mt-2">IN-APP<BR>MESSAGE</div>
+            <div class="col my-2 mb-3">
+            <img height="65" src="./img/inapp_message.png" alt="">
+          </div>
+        </div>
+        <div class="col-3 ma-1 d-flex flex-column logo box">
+          <div class="col mt-2">INBOX<BR>MESSAGE</div>
+          <div class="col my-2 mb-3">
+            <img height="65" src="./img/inbox_message.png" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="step2" v-show="step == 2">
+      <div class="header text-center mb-3">
+        <h4>BANNER</h4>
+      </div>
+
+      <div id="activity-form">
+        <div v-for="field in config1.fields" :key="field.name" class="form-group row">
+          <label :for="field.name" class="col-5 col-form-label">{{ field.label }}</label>
+          <div :class="{'col-7': !field.split, 'col-3': field.split == 'text', 'col-4': field.split == 'button'}">
+            <input v-if="field.type === 'text' || field.type === 'date' || field.type === 'time'"
+              :type="field.type === 'select' ? 'text' : field.type" class="form-control" :id="field.name"
+              :name="field.name" v-model="formData[field.name]">
+            <select v-else-if="field.type === 'select'" class="form-control" :id="field.name" :name="field.name"
+              v-model="formData[field.name]">
+              <option v-for="option in field.options" :key="option" :value="option">{{ option }}</option>
+            </select>
+          </div>
+          <div class="col-1" v-if="field.split =='text'">or</div>
+          <div class="col-3" v-if="field.split =='text'">
+            <input
+              type="text" class="form-control"
+              v-model="formData[field.name]">
+          </div>
+          <div class="col-3" v-if="field.split== 'button'"><button class="btn btn-danger" style="font-size: 15px;">SEND TEST</button></div>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div class="form-group row" v-show="step == 'step3' || step == 'step2'">
+        <label for="customFieldName" class="col-3 col-form-label">Custom Field</label>
+        <div class="col-2 mt-2">
+          <div class="col-3">Name</div>
+          <label for="customFieldValue" class="col-3 mt-3">Value</label>
+        </div>
+        <div class="col-3">
+          <input type="text" class="form-control" id="customFieldName" name="customFieldName">
+          <input type="text" class="form-control mt-1" id="customFieldValue" name="customFieldValue">
+        </div>
+        <div class="col-1 mt-4">or</div>
+        <div class="col-3">
+          <label for="customFieldValueDE" class="col-form-label"><i style="font-size: 10px;">select field from
+              DE</i></label>
+          <select class="form-control mt-1" id="customFieldValueDE" name="customFieldValueDE">
+            <option value="Select Field">Select Field</option>
+          </select>
+        </div>
+        <div class="row w-100 mt-1">
+          <div class="col-12 mb-5" style="font-size: 12px; text-align: end;">
+            + click to add more Custom Fields
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+  </div>
+  <script src="./js/postmonger.min.js"></script>
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="./js/script.js"></script>
+</body>
+
+</html>
