@@ -15,7 +15,7 @@
       <img src="./img/NLB_logo.png" alt="NLB Logo" class="logo" style="max-height: 50px;" >
     </div>
     <div class="header text-center my-3" v-show="step == 1">
-      <h4>INTERNET AND MOBILE BANKING<BR>MESSAING</h4>
+      <h4>Internet & Mobile Banking</h4>
     </div>
     <div id="step1" v-show="step == 1" style="max-width: 95%;">
       <div class="d-flex flex-row justify-content-between">
@@ -69,7 +69,7 @@
               type="text" class="form-control"
               v-model="formData[field.name]">
           </div>
-          <div class="col-3" v-if="field.split== 'button'"><button class="btn btn-danger" style="font-size: 15px;">SEND TEST</button></div>
+          <div class="col-3 d-flex justify-content-end" v-if="field.split== 'button'"><button class="btn btn-danger" style="font-size: 11px; height: 26px;">SEND TEST</button></div>
         </div>
       </div>
     </div>
