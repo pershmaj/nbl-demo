@@ -17,17 +17,17 @@
     <div class="header text-center my-3" v-show="step == 1">
       <h4>INTERNET AND MOBILE BANKING<BR>MESSAING</h4>
     </div>
-    <div id="step1" v-show="step == 1">
+    <div id="step1" v-show="step == 1" style="max-width: 95%;">
       <div class="d-flex flex-row justify-content-between">
         <div class="col-3 ma-1 d-flex flex-column logo box"  @click="step = 2">
           <div class="col mt-2 d-flex align-items-center justify-content-around">BANNER</div>
           <div class="col my-2 mb-3">
-            <img height="65" src="./img/banner.png" alt="">
+            <img height="65" src="./img/banner.png" class="mr-1" alt="">
           </div>
         </div>
         <div class="col-3 ma-1 d-flex flex-column logo box">
           <div class="col mt-2 px-1">PUSH<br>NOTIFICATION</div>
-          <div class="col my-2 mb-3">
+          <div class="col my-2 mb-3 d-flex">
             <img height="65" src="./img/push_notification.png" alt="">
           </div>
         </div>

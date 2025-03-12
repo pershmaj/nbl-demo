@@ -5,3 +5,21 @@
 .logo:hover {
   cursor:pointer;
 }
+
+.box {
+  background: #230078;
+  margin:3px;
+  border-radius: 10%;
+  color: #fff;
+  font-size: 12px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.form-control, .form-group {
+  max-height: 25px;
+}
+
+#activity-form {
+  font-size: 14px;
+}

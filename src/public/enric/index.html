@@ -12,10 +12,10 @@
 <body>
   <div id="app" class="container mt-4">
     <div class="header text-center py-2 mb-1 logo" @click="step = 1" style="border: 2px solid black;">
-      <img src="./img/NLB_logo.png" alt="NLB Logo" class="logo" style="max-height: 70px;" >
+      <img src="./img/NLB_logo.png" alt="NLB Logo" class="logo" style="max-height: 50px;" >
     </div>
     <div class="header text-center mb-3">
-      <h3>ENRICHMENT CUSTOM ACTIVITY</h3>
+      <h4>ENRICHMENT CUSTOM ACTIVITY</h4>
     </div>
     <div id="step1" v-show="step == 1">
 
@@ -34,7 +34,7 @@
 
     <div id="step2" v-show="step == 2">
       <div class="header text-center mb-3">
-        <h4>JOURNEY LOGGING</h4>
+        <h5>JOURNEY LOGGING</h5>
       </div>
 
       <div id="activity-form">
@@ -55,7 +55,7 @@
 
     <div id="step3" v-show="step == 3">
       <div class="header text-center mb-3">
-        <h4>ACTIVITY LOGGING</h4>
+        <h5>ACTIVITY LOGGING</h5>
       </div>
 
       <div id="activity-form">
@@ -74,7 +74,7 @@
       </div>
     </div>
     <div>
-      <div class="form-group row" v-show="step == 'step3' || step == 'step2'">
+      <div class="form-group row form-small" v-show="step == 2 || step == 3">
         <label for="customFieldName" class="col-3 col-form-label">Custom Field</label>
         <div class="col-2 mt-2">
           <div class="col-3">Name</div>

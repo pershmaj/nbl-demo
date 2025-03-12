@@ -20,6 +20,6 @@
   max-height: 25px;
 }
 
-#activity-form {
+#activity-form, .form-small {
   font-size: 14px;
 }
