@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Internet and mobile banking messaging</title>
+  <title>Internet & Mobile Banking</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <link rel="stylesheet" href="./css/styles.css">
 </head>
@@ -20,14 +20,14 @@
     <div id="step1" v-show="step == 1" style="max-width: 95%;">
       <div class="d-flex flex-row justify-content-between">
         <div class="col-3 ma-1 d-flex flex-column logo box"  @click="step = 2">
-          <div class="col mt-2 d-flex align-items-center justify-content-around">BANNER</div>
-          <div class="col my-2 mb-3">
-            <img height="65" src="./img/banner.png" class="mr-1" alt="">
+          <div class="col d-flex align-items-center justify-content-around">BANNER</div>
+          <div class="col px-1 mb-3">
+            <img height="65" src="./img/banner.png" alt="">
           </div>
         </div>
         <div class="col-3 ma-1 d-flex flex-column logo box">
           <div class="col mt-2 px-1">PUSH<br>NOTIFICATION</div>
-          <div class="col my-2 mb-3 d-flex">
+          <div class="col px-1 mb-3">
             <img height="65" src="./img/push_notification.png" alt="">
           </div>
         </div>
@@ -39,7 +39,7 @@
         </div>
         <div class="col-3 ma-1 d-flex flex-column logo box">
           <div class="col mt-2">INBOX<BR>MESSAGE</div>
-          <div class="col my-2 mb-3">
+          <div class="col px-1 mb-3">
             <img height="65" src="./img/inbox_message.png" alt="">
           </div>
         </div>
@@ -60,7 +60,9 @@
               :name="field.name" v-model="formData[field.name]">
             <select v-else-if="field.type === 'select'" class="form-control" :id="field.name" :name="field.name"
               v-model="formData[field.name]">
+              <optgroup>
               <option v-for="option in field.options" :key="option" :value="option">{{ option }}</option>
+            </optgroup>
             </select>
           </div>
           <div class="col-1" v-if="field.split =='text'">or</div>
@@ -90,7 +92,10 @@
           <label for="customFieldValueDE" class="col-form-label"><i style="font-size: 10px;">select field from
               DE</i></label>
           <select class="form-control mt-1" id="customFieldValueDE" name="customFieldValueDE">
-            <option value="Select Field">Select Field</option>
+            <optgroup>
+              <option value="Select Field">Select Field</option>
+            </optgroup>
+            
           </select>
         </div>
         <div class="row w-100 mt-1">
