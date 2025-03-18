@@ -1,5 +1,7 @@
 .form-group {
   margin-bottom: 2px;
+  display: flex;
+  align-items: center;
 }
 
 .logo:hover {

@@ -10,11 +10,14 @@
 </head>
 
 <body>
-  <div id="app" class="container mt-4">
-    <div class="header text-center py-2 mb-1 logo" @click="step = 1" style="border: 2px solid black;">
+  <div id="app" class="container">
+    <!-- <div class="header text-center py-2 mb-1 logo" @click="step = 1" style="border: 2px solid black;">
       <img src="./img/NLB_logo.png" alt="NLB Logo" class="logo" style="max-height: 50px;" >
-    </div>
-    <div class="header text-center mb-3">
+    </div> -->
+    <div style="margin: 0 auto; padding: 15px 20px; background-color: #2F2376; border-radius: 12px; text-align: left;">
+      <img src="https://image.s10.sfmc-content.com/lib/fe3911717064047c751579/m/1/592dbf34-b525-4a84-bd93-2749a1b01fdc.png" alt="NLB Logo" style="height: auto; max-height: 40px; max-width: 100px; display: block;">
+  </div>
+    <div class="header text-center mb-3 mt-3">
       <h4>ENRICHMENT CUSTOM ACTIVITY</h4>
     </div>
     <div id="step1" v-show="step == 1">

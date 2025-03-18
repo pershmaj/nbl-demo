@@ -105,7 +105,7 @@ const json1 = {
         },
         {
             "name": "testContactKey",
-            "label": "Test Contack Key",
+            "label": "Test Contact Key",
             "type": "text",
             "placeholder": "Insert Test Contact Key",
             "split": "button",

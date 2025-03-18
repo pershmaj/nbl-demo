@@ -11,9 +11,12 @@
 
 <body>
   <div id="app" class="container mt-4">
-    <div class="header text-center py-2 mb-1 logo" @click="step = 1" style="border: 2px solid black;">
+    <!-- <div class="header text-center py-2 mb-1 logo" @click="step = 1" style="border: 2px solid black;">
       <img src="./img/NLB_logo.png" alt="NLB Logo" class="logo" style="max-height: 50px;" >
-    </div>
+    </div> -->
+    <div style="margin: 0 auto; padding: 15px 20px; background-color: #2F2376; border-radius: 12px; text-align: left;">
+      <img src="https://image.s10.sfmc-content.com/lib/fe3911717064047c751579/m/1/592dbf34-b525-4a84-bd93-2749a1b01fdc.png" alt="NLB Logo" style="height: auto; max-height: 40px; max-width: 100px; display: block;">
+  </div>
     <div class="header text-center my-3" v-show="step == 1">
       <h4>Internet & Mobile Banking</h4>
     </div>
@@ -69,7 +72,8 @@
           <div class="col-3" v-if="field.split =='text'">
             <input
               type="text" class="form-control"
-              v-model="formData[field.name]">
+              
+              >
           </div>
           <div class="col-3 d-flex justify-content-end" v-if="field.split== 'button'"><button class="btn btn-danger" style="font-size: 11px; height: 26px;">SEND TEST</button></div>
         </div>
